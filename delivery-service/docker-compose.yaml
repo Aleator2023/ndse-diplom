@@ -1,4 +1,4 @@
-version: '3.8'
+version: '4.32.0'
 
 services:
   app:
@@ -18,14 +18,6 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
-
-  debug:
-    image: busybox
-    command: env
-    environment:
-      - HTTP_PORT=${HTTP_PORT}
-      - MONGO_URL=${MONGO_URL}
-      - JWT_SECRET=${JWT_SECRET}
 
 volumes:
   mongo-data:
